@@ -9,10 +9,13 @@ import (
 
 
 func main() {
+    // Load API Key
     err := godotenv.Load()
     if err != nil {
         log.Fatal("Error loading .env file")
     }
     riotKey := os.Getenv("RIOT_KEY")
-    fmt.Println(riotKey)
+
+    account := r_account_riot_id(riotKey, "americas", "going 8th", "7330")
+    fmt.Println(account)
 }
